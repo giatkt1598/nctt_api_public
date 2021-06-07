@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:WebApi.Controllers.ProjectsController.GetAsync(DataService.Models.ViewModels.ProjectViewModel,WebApi.Models.HelperModels.FilterAndPagingAndSortHelperModel)">
+            <summary>
+                Get projects by property
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.ProjectsController.UpdateAsync(System.Int32,WebApi.Models.RequestModels.ProjectUpdateModel)">
+            <summary>
+                Update project by id
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.ProjectsController.GetByIdAsync(System.Int32)">
+            <summary>
+                Get project by id
+            </summary>
+            <remarks>
+                Get project has 'Actived' = true
+            </remarks>
+        </member>
+        <member name="M:WebApi.Controllers.ProjectsController.DeleteByIdAsync(System.Int32)">
+            <summary>
+                Delete project by id.
+            </summary>
+            <remarks>
+                Acttualy, set project.Actived = false
+            </remarks>
+            <response code="204">Delete success</response>
+        </member>
+        <member name="M:WebApi.Controllers.ProjectsController.CreateProjectAsync(WebApi.Models.RequestModels.ProjectCreateModel)">
+            <summary>
+                Create project
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.ProjectsController.GetFormsByProjectId(System.Int32,WebApi.Models.HelperModels.FilterAndPagingAndSortHelperModel)">
+            <summary>
+                Get forms of project
+            </summary>
+            <param name="projectId">ProjectId</param>
+            <param name="helperModel"></param>
+        </member>
+        <member name="M:WebApi.Controllers.UsersController.Authenticate(DataService.Models.RequestModels.AuthenticateRequest)">
+            <summary>
+                Login
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.UsersController.RefreshToken(WebApi.Models.RequestModels.RefreshToken)">
+            <summary>
+                Get new token
+            </summary>
+            <remarks>
+                Pass 'refresh token' by cookie or model, model first.
+                Refresh token hiện tại có được từ việc encoding và decoding nên chỉ cần bị 
+                lộ thì trừ khi refresh token hết hạn hoặc account bị xóa nếu ko là sài vĩnh viễn luôn. 
+                Kiến nghị lưu refresh token vào database để cho phép 
+                revoke (thu hồi) refresh token khi không sử dụng. Như vậy, nếu access_token hết hạn 
+                (access_token có hạn sử dụng ngắn dưới 5 phút)
+                thì chỉ có thể đăng nhập bằng username password mới có thể tiếp tục truy cập.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.ZTestsController.GetLocationFromPicture(WebApi.Controllers.FileModel)">
+            <summary>
+               Extract gps location from image
+            </summary>
+        </member>
+    </members>
+</doc>
